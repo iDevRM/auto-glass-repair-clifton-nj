@@ -1,0 +1,145 @@
+:root {
+  --ink: #102620;
+  --ink-2: #1b3a31;
+  --text: #1f2a27;
+  --muted: #56635f;
+  --tint: #f2f5f1;
+  --line: #dbe3dd;
+  --orange: #d9541e;
+  --orange-dark: #b44314;
+  --pine: #2f7d5b;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif; color: var(--text); line-height: 1.65; font-size: 17px; background: #fff; }
+img { max-width: 100%; height: auto; display: block; }
+a { color: inherit; }
+.wrap { max-width: 1160px; margin: 0 auto; padding: 0 22px; }
+.narrow { max-width: 860px; }
+.center { text-align: center; }
+.muted { color: var(--muted); }
+
+/* nav */
+.nav { position: sticky; top: 0; z-index: 50; background: var(--ink); box-shadow: 0 2px 10px rgba(0,0,0,.25); }
+.nav-in { display: flex; align-items: center; justify-content: space-between; gap: 18px; min-height: 68px; flex-wrap: wrap; }
+.brand { display: flex; align-items: center; gap: 10px; color: #fff; text-decoration: none; font-size: 20px; font-weight: 600; letter-spacing: -0.2px; }
+.brand b { color: #ff9b6e; font-weight: 800; }
+.mark { width: 26px; height: 18px; border: 3px solid #ff9b6e; border-radius: 10px 10px 4px 4px; display: inline-block; }
+.nav-links { display: flex; gap: 20px; flex-wrap: wrap; }
+.nav-links a { color: #c5d3cd; text-decoration: none; font-size: 15px; font-weight: 600; padding: 6px 0; border-bottom: 2px solid transparent; }
+.nav-links a:hover, .nav-links a.on { color: #fff; border-bottom-color: var(--orange); }
+.nav-call { background: var(--orange); color: #fff; text-decoration: none; font-weight: 800; padding: 10px 18px; border-radius: 99px; font-size: 15px; white-space: nowrap; }
+
+/* hero: photo background on every page */
+.hero {
+  background-color: var(--ink);
+  background-image:
+    linear-gradient(100deg, rgba(16,38,32,.88) 0%, rgba(16,38,32,.64) 48%, rgba(16,38,32,.2) 100%),
+    url('auto-glass-repair-clifton-hero.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: #fff;
+  padding: 60px 0 66px;
+}
+.hero-in { display: grid; grid-template-columns: 1.2fr 0.9fr; gap: 44px; align-items: center; }
+.badge { display: inline-block; background: rgba(47,125,91,.35); color: #d9f2e6; border: 1px solid #6fc29d; padding: 4px 14px; border-radius: 99px; font-size: 13px; font-weight: 700; margin-bottom: 16px; letter-spacing: .3px; }
+.hero h1 { font-size: 46px; line-height: 1.1; letter-spacing: -1px; margin-bottom: 18px; text-shadow: 0 2px 14px rgba(0,0,0,.4); }
+.hero p.lead { font-size: 19px; color: #eef3f0; margin-bottom: 22px; max-width: 560px; }
+.tel-big { display: inline-block; font-size: 32px; font-weight: 800; color: #fff; text-decoration: none; margin-bottom: 20px; }
+.btns { display: flex; gap: 12px; flex-wrap: wrap; }
+.btn { display: inline-block; background: var(--orange); color: #fff; font-weight: 800; padding: 14px 24px; border-radius: 99px; text-decoration: none; border: 0; font-size: 16px; cursor: pointer; }
+.btn:hover { background: var(--orange-dark); }
+.btn-light { background: #fff; color: var(--ink); }
+.btn-light:hover { background: #f1f1f1; }
+
+/* sections */
+.section { padding: 66px 0; }
+.section.tint { background: var(--tint); }
+.section h2 { font-size: 31px; line-height: 1.2; color: var(--ink); margin-bottom: 16px; letter-spacing: -0.5px; }
+.section h3 { font-size: 19px; color: var(--ink); margin: 18px 0 6px; }
+.section p { margin-bottom: 14px; max-width: 760px; }
+.center p { margin-left: auto; margin-right: auto; }
+p.intro { font-size: 19px; color: var(--ink-2); }
+.split { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
+.split.flip > img { order: -1; }
+.split img { border-radius: 14px; box-shadow: 0 10px 30px rgba(16,38,32,0.18); }
+.ticks { list-style: none; margin: 10px 0 16px; }
+.ticks li { padding-left: 30px; position: relative; margin-bottom: 10px; max-width: 760px; }
+.ticks li::before { content: "\2713"; position: absolute; left: 0; top: 1px; width: 20px; height: 20px; border-radius: 50%; background: var(--pine); color: #fff; font-size: 12px; font-weight: 800; display: flex; align-items: center; justify-content: center; }
+
+.signs { display: grid; grid-template-columns: repeat(5, 1fr); gap: 14px; margin-top: 20px; }
+.sign { background: #fff; border-radius: 12px; padding: 20px 18px; border-top: 5px solid var(--orange); box-shadow: 0 4px 14px rgba(16,38,32,.07); }
+.sign h3 { margin-top: 0; font-size: 17px; }
+.sign p { font-size: 15px; margin: 0; }
+
+.timeline { list-style: none; counter-reset: s; margin-top: 22px; display: grid; grid-template-columns: 1fr 1fr; gap: 0 40px; }
+.timeline li { counter-increment: s; position: relative; padding: 0 0 26px 58px; border-left: 2px solid var(--line); margin-left: 18px; }
+.timeline li::before { content: counter(s); position: absolute; left: -19px; top: 0; width: 36px; height: 36px; border-radius: 50%; background: var(--ink); color: #fff; font-weight: 800; display: flex; align-items: center; justify-content: center; }
+.timeline h3 { margin-top: 4px; }
+.timeline p { font-size: 16px; }
+
+.tiles { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 20px; }
+.tile { position: relative; display: block; border-radius: 12px; overflow: hidden; text-decoration: none; }
+.tile img { aspect-ratio: 4 / 3; object-fit: cover; width: 100%; }
+.tile span { position: absolute; left: 0; right: 0; bottom: 0; padding: 12px 14px; background: linear-gradient(0deg, rgba(16,38,32,.9), rgba(16,38,32,0)); color: #fff; font-weight: 800; }
+
+.qa { background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 18px 22px; margin-bottom: 12px; }
+.qa summary { list-style: none; cursor: pointer; }
+.qa summary::-webkit-details-marker { display: none; }
+.qa h3 { margin: 0; font-size: 18px; display: inline; }
+.qa p { margin: 10px 0 0; font-size: 16px; }
+
+.compare { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 16px; background: #fff; }
+.compare th, .compare td { border: 1px solid var(--line); padding: 11px 13px; text-align: left; vertical-align: top; }
+.compare th { background: var(--pine); color: #fff; }
+
+/* forms */
+.form { background: #fff; color: var(--text); border-radius: 14px; padding: 24px; box-shadow: 0 14px 40px rgba(0,0,0,0.32); }
+.form h3 { color: var(--ink); margin: 0 0 2px; font-size: 22px; }
+.form-sub { font-size: 14px; color: var(--muted); margin-bottom: 12px !important; }
+.form label { display: block; font-size: 14px; font-weight: 700; color: var(--ink); margin-bottom: 9px; }
+.form input, .form textarea { display: block; width: 100%; margin-top: 4px; padding: 10px 12px; border: 1px solid #cfd9d3; border-radius: 8px; font: inherit; font-size: 15px; }
+.form .btn { width: 100%; margin-top: 6px; }
+.form .fine { font-size: 13px; color: var(--muted); margin: 10px 0 0; text-align: center; }
+.form .fine a { color: var(--pine); font-weight: 700; }
+
+/* cta + map + footer */
+.cta { background: var(--orange); padding: 46px 0; color: #fff; }
+.cta-in { display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
+.cta h2 { color: #fff; font-size: 29px; margin-bottom: 4px; }
+.cta p { font-size: 18px; }
+.note { max-width: 640px; margin: 0 auto 24px; padding: 14px 18px; background: var(--tint); border-left: 4px solid var(--pine); border-radius: 8px; font-size: 15px; color: var(--muted); text-align: left; }
+.note strong { color: var(--ink); }
+.map { border-radius: 14px; overflow: hidden; box-shadow: 0 6px 24px rgba(0,0,0,0.10); max-width: 960px; margin: 0 auto; }
+.foot { background: var(--ink); color: #b5c4be; padding: 50px 0 22px; font-size: 15px; }
+.foot-grid { display: grid; grid-template-columns: 1.3fr 1fr 1.4fr; gap: 34px; }
+.foot a { color: #fff; }
+.foot ul { list-style: none; }
+.foot li { margin-bottom: 6px; }
+.foot .cols { columns: 2; }
+.foot-name { color: #fff; font-weight: 800; font-size: 18px; margin-bottom: 8px; }
+.foot-head { color: #ff9b6e; font-weight: 800; margin-bottom: 10px; }
+.foot p { margin-bottom: 8px; }
+.copy { text-align: center; margin-top: 30px; font-size: 13px; color: #7f918a; }
+
+@media (max-width: 1000px) {
+  .signs { grid-template-columns: repeat(2, 1fr); }
+  .tiles { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 900px) {
+  .hero-in, .split, .foot-grid, .timeline { grid-template-columns: 1fr; }
+  .split.flip > img { order: 0; }
+  .hero { background-image: linear-gradient(180deg, rgba(16,38,32,.80) 0%, rgba(16,38,32,.58) 100%), url('auto-glass-repair-clifton-hero.webp'); }
+  .hero h1 { font-size: 35px; }
+  .nav-links { display: none; }
+}
+@media (max-width: 560px) {
+  .signs, .tiles { grid-template-columns: 1fr; }
+  .hero h1 { font-size: 30px; }
+  .tel-big { font-size: 27px; }
+  .section h2 { font-size: 25px; }
+  .brand { font-size: 17px; gap: 6px; }
+  .mark { display: none; }
+  .nav-in { flex-wrap: nowrap; min-height: 60px; }
+  .nav-call { padding: 8px 12px; font-size: 14px; }
+}
